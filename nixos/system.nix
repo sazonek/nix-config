@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nix.settings.auto-optimise-store = true;
 
@@ -12,7 +15,6 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
 
   time.timeZone = "Europe/Warsaw";
 

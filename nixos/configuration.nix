@@ -1,12 +1,11 @@
 { ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./system.nix
-      ./services.nix
-      ./packages.nix
-      ./users.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./system.nix
+    ./services.nix
+    ./packages.nix
+    ./users.nix
+  ];
 }

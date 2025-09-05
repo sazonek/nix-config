@@ -4,7 +4,10 @@
   users.users.sazonek = {
     isNormalUser = true;
     description = "Filip Stefański";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
 }

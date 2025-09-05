@@ -35,5 +35,5 @@
     discord
     signal-desktop
     spotify
-];
+  ];
 }
