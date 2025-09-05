@@ -11,7 +11,7 @@
       ls = "eza -g --icons";
       ll = "eza -l -g --icons";
       la = "eza -la -g --icons";
-      nfu = "sudo nix flake update ~/.Dotfiles";
+      nfu = "sudo nix flake update --flake ~/.Dotfiles";
       nrs = "sudo nixos-rebuild switch --flake ~/.Dotfiles";
       zed = "zeditor";
       aka = "( gpg -d -q ~/.ssh/.ssh_password.gpg | sshpass ssh -tt router ) > /dev/null 2>&1 & disown";
