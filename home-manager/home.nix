@@ -7,6 +7,7 @@
     ./gpg.nix
     ./ssh.nix
     ./git.nix
+    ./firefox.nix
   ];
 
   home.username = "sazonek";
