@@ -35,5 +35,7 @@
     discord
     signal-desktop
     spotify
+
+    openssh
   ];
 }
