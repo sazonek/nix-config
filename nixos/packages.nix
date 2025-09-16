@@ -10,6 +10,7 @@
     ghostty
     gnupg
     pinentry-gnome3
+    gnome-tweaks
     nixd
     package-version-server
     nil
