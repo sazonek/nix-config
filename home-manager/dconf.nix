@@ -13,7 +13,7 @@
       picture-uri-dark = "file://${self}/wallpaper.jpg";
     };
 
-    "/org/gnome/desktop/wm/preferences" = {
+    "org/gnome/desktop/wm/preferences" = {
       resize-with-right-button = true;
     };
   };
