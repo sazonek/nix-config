@@ -15,22 +15,34 @@
       home-manager,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      user = "sazonek";
+
+      homeManagerModule = {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.${user} = import ./home-manager/home.nix;
+        home-manager.extraSpecialArgs = { inherit inputs self; };
+      };
+
+      commonModules = [
+        ./nixos/configuration.nix
+        home-manager.nixosModules.home-manager
+        homeManagerModule
+      ];
+    in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = { inherit inputs self; };
-        modules = [
-          ./nixos/configuration.nix
+        modules = commonModules ++ [ ./nixos/hosts/nixos/default.nix ];
+      };
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.sazonek = import ./home-manager/home.nix;
-
-            home-manager.extraSpecialArgs = { inherit inputs self; };
-          }
-        ];
+      nixosConfigurations.probook = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs self; };
+        modules = commonModules ++ [ ./nixos/hosts/probook/default.nix ];
       };
     };
 }
