@@ -15,6 +15,9 @@
     nil
 
     clang_17
+    clang-tools
+    ninja
+    gnumake
     gdb
     cmake
     qt6.full
